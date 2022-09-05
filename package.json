@@ -1,0 +1,22 @@
+{
+    "name": "@fauzie811/alpinejs-teleport",
+    "version": "1.0.0",
+    "description": "An alpine.js plugin",
+    "main": "dist/teleport.cjs.js",
+    "module": "dist/teleport.esm.js",
+    "unpkg": "dist/teleport.min.js",
+    "keywords": [],
+    "author": {
+        "name": "Fauzie",
+        "email": "fauzie811@yahoo.com"
+    },
+    "license": "GPL",
+    "devDependencies": {
+        "alpinejs": "^3.10.3",
+        "esbuild": "^0.15.7"
+    },
+    "scripts": {
+        "build": "node scripts/build.js",
+        "watch": "node scripts/build.js --watch"
+    }
+}
