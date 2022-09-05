@@ -15,8 +15,14 @@
     <body>
         <div x-data="{ count: 1 }" id="a">
             <button @click="count++">Inc</button>
+            <template x-teleport2="#b">
+                <p><span>Append: </span><span x-text="count"></span></p>
+            </template>
+            <template x-teleport2.before="#b">
+                <p><span>Before: </span><span x-text="count + 1"></span></p>
+            </template>
             <template x-teleport2.after="#b">
-                <span x-text="count"></span>
+                <p><span>After: </span><span x-text="count + 2"></span></p>
             </template>
         </div>
         <div id="b"></div>
