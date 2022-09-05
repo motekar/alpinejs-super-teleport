@@ -36,7 +36,6 @@ export default function (Alpine) {
         addScopeToNode(clone, {}, el)
 
         mutateDom(() => {
-            console.log(modifiers)
             if (modifiers.includes('before')) {
                 target.parentNode.insertBefore(clone, target)
             } else if (modifiers.includes('after')) {
