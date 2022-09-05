@@ -1,20 +1,14 @@
-import Alpine from 'alpinejs'
-const initTree = Alpine.initTree
-const mutateDom = Alpine.mutateDom
-const addScopeToNode = Alpine.addScopeToNode
-const warn = Alpine.warn
-
 export default function (Alpine) {
     Alpine.directive('teleport2', teleport)
 
     function teleport(el, { modifiers, expression }, { cleanup }) {
         if (el.tagName.toLowerCase() !== 'template')
-            warn('x-teleport can only be used on a <template> tag', el)
+            Alpine.warn('x-teleport can only be used on a <template> tag', el)
 
         let target = document.querySelector(expression)
 
         if (!target)
-            warn(`Cannot find x-teleport element for selector: "${expression}"`)
+            Alpine.warn(`Cannot find x-teleport element for selector: "${expression}"`)
 
         let clone = el.content.cloneNode(true).firstElementChild
 
@@ -33,9 +27,9 @@ export default function (Alpine) {
             })
         }
 
-        addScopeToNode(clone, {}, el)
+        Alpine.addScopeToNode(clone, {}, el)
 
-        mutateDom(() => {
+        Alpine.mutateDom(() => {
             if (modifiers.includes('before')) {
                 target.parentNode.insertBefore(clone, target)
             } else if (modifiers.includes('after')) {
@@ -44,7 +38,7 @@ export default function (Alpine) {
                 target.appendChild(clone)
             }
 
-            initTree(clone)
+            Alpine.initTree(clone)
 
             clone._x_ignore = true
         })
