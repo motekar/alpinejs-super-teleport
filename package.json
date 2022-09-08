@@ -1,10 +1,10 @@
 {
-    "name": "@fauzie811/alpinejs-teleport",
+    "name": "@fauzie811/alpinejs-super-teleport",
     "version": "1.0.0",
     "description": "An alpine.js plugin",
-    "main": "dist/teleport.cjs.js",
-    "module": "dist/teleport.esm.js",
-    "unpkg": "dist/teleport.min.js",
+    "main": "dist/super-teleport.cjs.js",
+    "module": "dist/super-teleport.esm.js",
+    "unpkg": "dist/super-teleport.min.js",
     "keywords": [],
     "author": {
         "name": "Fauzie",

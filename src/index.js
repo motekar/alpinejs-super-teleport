@@ -1,18 +1,18 @@
 export default function (Alpine) {
-    Alpine.directive('teleport2', teleport)
+    Alpine.directive('super-teleport', teleport)
 
     function teleport(el, { modifiers, expression }, { cleanup }) {
         if (el.tagName.toLowerCase() !== 'template')
-            Alpine.warn('x-teleport can only be used on a <template> tag', el)
+            Alpine.warn('x-super-teleport can only be used on a <template> tag', el)
 
         let target = document.querySelector(expression)
 
         if (!target)
-            Alpine.warn(`Cannot find x-teleport element for selector: "${expression}"`)
+            Alpine.warn(`Cannot find x-super-teleport element for selector: "${expression}"`)
 
         let clone = el.content.cloneNode(true).firstElementChild
 
-        // Add reference to element on <template x-teleport, and visa versa.
+        // Add reference to element on <template x-super-teleport, and visa versa.
         el._x_teleport = clone
         clone._x_teleportBack = el
 
@@ -34,6 +34,11 @@ export default function (Alpine) {
                 target.parentNode.insertBefore(clone, target)
             } else if (modifiers.includes('after')) {
                 target.parentNode.insertBefore(clone, target.nextSibling)
+            } else if (modifiers.includes('prepend')) {
+                target.insertBefore(clone, target.firstChild)
+            } else if (modifiers.includes('replace')) {
+                target.parentNode.insertBefore(clone, target)
+                target.parentNode.removeChild(target)
             } else {
                 target.appendChild(clone)
             }

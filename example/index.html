@@ -6,25 +6,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
 
-        <script src="/dist/teleport.min.js"></script>
+        <script src="/dist/super-teleport.min.js"></script>
         <script
             defer
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
+
+        <style>
+            .box {
+                background: yellow;
+                margin-bottom: 1rem;
+                padding: 0.5rem 1rem;
+            }
+        </style>
     </head>
     <body>
         <div x-data="{ count: 1 }" id="a">
             <button @click="count++">Inc</button>
-            <template x-teleport2="#b">
-                <p><span>Append: </span><span x-text="count"></span></p>
+            <template x-super-teleport="#b">
+                <p><span>Append (default): </span><span x-text="count"></span></p>
             </template>
-            <template x-teleport2.before="#b">
+            <template x-super-teleport.prepend="#b">
+                <p><span>Prepend: </span><span x-text="count"></span></p>
+            </template>
+            <template x-super-teleport.before="#b">
                 <p><span>Before: </span><span x-text="count + 1"></span></p>
             </template>
-            <template x-teleport2.after="#b">
+            <template x-super-teleport.after="#b">
                 <p><span>After: </span><span x-text="count + 2"></span></p>
             </template>
+            <template x-super-teleport.replace="#c">
+                <p><span>Replace: </span><span x-text="count + 3"></span></p>
+            </template>
         </div>
-        <div id="b"></div>
+        <div class="box" id="b">
+            <p>Original DIV content</p>
+        </div>
+        <div class="box" id="c">This DIV will be gone</div>
     </body>
 </html>

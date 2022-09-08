@@ -2,7 +2,7 @@ let fs = require('fs')
 //CDN
 build({
     entryPoints: [`builds/cdn.js`],
-    outfile: `dist/teleport.min.js`,
+    outfile: `dist/super-teleport.min.js`,
     bundle: true,
     minify: true,
     sourcemap: false,
@@ -12,7 +12,7 @@ build({
 //Module
 build({
     entryPoints: [`builds/module.js`],
-    outfile: `dist/teleport.esm.js`,
+    outfile: `dist/super-teleport.esm.js`,
     bundle: true,
     bundle: true,
     platform: 'neutral',
@@ -20,7 +20,7 @@ build({
 })
 build({
     entryPoints: [`builds/module.js`],
-    outfile: `dist/teleport.cjs.js`,
+    outfile: `dist/super-teleport.cjs.js`,
     bundle: true,
     target: ['node10.4'],
     platform: 'node',
