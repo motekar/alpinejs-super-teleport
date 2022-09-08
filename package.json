@@ -1,21 +1,29 @@
 {
-    "name": "@fauzie811/alpinejs-super-teleport",
+    "name": "@motekar/alpinejs-super-teleport",
     "version": "1.0.0",
-    "description": "An alpine.js plugin",
+    "description": "A supercharged version of `x-teleport` for Alpine.js",
     "main": "dist/super-teleport.cjs.js",
     "module": "dist/super-teleport.esm.js",
     "unpkg": "dist/super-teleport.min.js",
     "keywords": [],
-    "author": {
-        "name": "Fauzie",
-        "email": "fauzie811@yahoo.com"
-    },
-    "license": "GPL",
-    "devDependencies": {
-        "esbuild": "^0.15.7"
-    },
     "scripts": {
         "build": "node scripts/build.js",
         "watch": "node scripts/build.js --watch"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/motekar/alpinejs-super-teleport.git"
+    },
+    "contributors": [
+        "Fauzie <fauzie811@yahoo.com>",
+        "Fadlul Alim <fad.lee@gmail.com>"
+    ],
+    "license": "ISC",
+    "devDependencies": {
+        "esbuild": "^0.15.7"
+    },
+    "bugs": {
+        "url": "https://github.com/motekar/alpinejs-super-teleport/issues"
+    },
+    "homepage": "https://github.com/motekar/alpinejs-super-teleport#readme"
 }
