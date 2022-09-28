@@ -1,6 +1,6 @@
 {
     "name": "@motekar/alpinejs-super-teleport",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A supercharged version of `x-teleport` for Alpine.js",
     "main": "dist/super-teleport.cjs.js",
     "module": "dist/super-teleport.esm.js",
